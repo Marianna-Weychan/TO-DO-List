@@ -15,20 +15,20 @@
 
 .form__field {
     display: inline-block;
+    width: 90%;
+    max-width: 550px;
     border: 2px solid #cac6c6;
     background-color: hsl(0, 100%, 99%);
     height: 15px;
     margin: 10px;
-    padding: 17px;
     margin-top: 20px;
-    width: 70%;
-
-
-
+    padding: 17px;
+    word-break: break-word;
 }
 
 .form__button {
-    width: 180px;
+    width: 20%;
+    max-width: 140px;
     margin: 10px;
     padding: 10px;
     background-color: teal;
