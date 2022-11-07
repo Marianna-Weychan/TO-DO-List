@@ -27,7 +27,7 @@
 }
 
 .taskList__button--done {
-    background-color: green;
+    background-color: hsl(125, 62%, 50%, 1);
 }
 
 .taskList__button--done:hover {
