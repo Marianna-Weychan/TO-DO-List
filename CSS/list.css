@@ -4,6 +4,17 @@
     background-color: hsl(0, 100%, 99%);
     padding: 17px;
     width: 100%;
+    margin-top: 10px;
+}
+
+.list__header {
+    padding: 10px;
+    border-bottom: solid 2px;
+    border-bottom-color: #eee;
+    margin: 0;
+    text-align: start;
+    text-align: left;
+
 }
 
 .list__item {
