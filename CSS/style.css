@@ -22,21 +22,3 @@ html {
         width: 100%;
     }
 }
-
-.form {
-    display: grid;
-    grid-template-rows: 1fr;
-    border: 2px solid #cac6c6;
-    background-color: hsl(0, 100%, 99%);
-
-
-}
-
-.ToDoList {
-    display: inline-block;
-    border: 2px solid #cac6c6;
-    background-color: hsl(0, 100%, 99%);
-    padding: 17px;
-    width: 100%;
-    font-weight: bold;
-}

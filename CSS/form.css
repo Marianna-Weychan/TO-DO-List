@@ -1,3 +1,10 @@
+.form {
+    display: grid;
+    grid-template-rows: 1fr;
+    border: 2px solid #cac6c6;
+    background-color: hsl(0, 100%, 99%);
+}
+
 .form__legend {
     font-size: 20px;
     font-weight: bold;
