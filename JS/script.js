@@ -31,7 +31,6 @@
         })
     };
 
-
     const bindToggleEvents = () => {
         const toggleDoneButtons = document.querySelectorAll(".js-done");
 
@@ -54,7 +53,6 @@
             <span class="taskList${task.done ? " taskList__done" : ""}">
             ${task.content}</span>
             <button class="js-remove taskList__button taskList__button--delete">🗑</button>
-            
             </li>
         `;
         }
@@ -64,7 +62,6 @@
         bindEvents();
         bindToggleEvents();
     };
-
 
     const clearInput = (inputElement) => {
         inputElement.value = "";
