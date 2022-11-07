@@ -11,6 +11,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="CSS/style.css" rel="stylesheet">
     <link href="CSS/form.css" rel="stylesheet">
+    <link href="CSS/list.css" rel="stylesheet">
+    <link href="CSS/taskList.css" rel="stylesheet">
     <script defer src="JS/script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 </head>
@@ -23,13 +25,17 @@
         <legend class="form__legend">Dodaj nowe zadanie</legend>
         <p class="form__element">
             <label>
-                <input class="form__field js-newTask" name="name" placeholder="Co jest do zrobienia?" autofocus>
+                <input class="form__field js-newTask" name="task" placeholder="Co jest do zrobienia?" autofocus>
                 <button class="form__button">Dodaj zadanie</button>
             </label>
         </p>
     </form>
-    <p class="ToDoList">Lista zadań</p>
-    <ul class="js-tasks"></ul>
+    <container class="list">
+        <h2 class="list__header">Lista zadań</h2>
+        <div class="list__taskList">
+            <ul class="js-tasks list__taskList--modifier"></ul>
+        </div>
+    </container>
 
 </body>
 
