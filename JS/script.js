@@ -1,6 +1,5 @@
 {
     const tasks = [
-
     ];
 
     const addNewTask = (newTaskContent) => {

@@ -13,7 +13,6 @@
     margin: 10px;
     display: grid;
     grid-template-columns: 3fr 2fr;
-
 }
 
 .form__element {
@@ -41,8 +40,6 @@
     background-color: teal;
     border: none;
     color: rgb(202, 221, 224);
-
-
 }
 
 .form__button:hover {

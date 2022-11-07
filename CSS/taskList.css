@@ -39,7 +39,7 @@
 }
 
 .taskList__button--delete {
-    background-color: red;
+    background-color: hsl(0, 100%, 50%);
 }
 
 .taskList__button--delete:hover {
