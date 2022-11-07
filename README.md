@@ -19,3 +19,5 @@ I created this application as part of learning programming at YouCode school.
 - BEM convention,
 - JAVA SCRIPT ES6,
 - GIT
+- FLEX
+- GRID
