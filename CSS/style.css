@@ -8,17 +8,8 @@ html {
     box-sizing: inherit;
 }
 
-.body {
-    font-family: 'Lato', sans-serif;
-    max-width: 800px;
-    padding: 20px;
-    width: 100%;
-    margin: auto;
-    background-color: #eee;
-}
 
-@media (max-width: 767px) {
-    .body {
-        width: 100%;
-    }
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #eee;
 }
