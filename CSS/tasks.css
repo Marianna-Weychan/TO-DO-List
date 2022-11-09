@@ -27,15 +27,15 @@
     cursor: pointer;
 }
 
-.tasks__button--done {
+.tasks__button--toggleDone {
     background-color: hsl(125, 62%, 25%);
 }
 
-.tasks__button--done:hover {
+.tasks__button--toggleDone:hover {
     background-color: hsl(120, 100%, 35%);
 }
 
-.tasks__button--done:active {
+.tasks__button--toggleDone:active {
     background-color: hsl(120, 100%, 45%);
 }
 
