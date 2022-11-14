@@ -29,6 +29,7 @@
 
 .tasks__button--toggleDone {
     background-color: hsl(125, 62%, 25%);
+    transition: 1s;
 }
 
 .tasks__button--toggleDone:hover {
@@ -40,7 +41,8 @@
 }
 
 .tasks__button--delete {
-    background-color: hsl(0, 100%, 50%);
+    background-color: hsl(0, 92%, 41%);
+    transition: 1s;
 }
 
 .tasks__button--delete:hover {
