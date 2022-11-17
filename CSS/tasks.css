@@ -29,6 +29,7 @@
     padding: 0;
     margin: 10px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
 .tasks__button--toggleDone {
