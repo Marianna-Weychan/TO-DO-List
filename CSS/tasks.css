@@ -13,7 +13,7 @@
     padding: 10px;
 }
 
-.task__item--hidden {
+.tasks__item--hidden {
     display: none;
 }
 
