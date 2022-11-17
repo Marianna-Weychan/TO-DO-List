@@ -1,19 +1,12 @@
 {
     let tasks = [];
-
-    const addNewTask = (newTask) => {
-        tasks = [
-            ...tasks,
-            {
-                content: newTask,
-                done: false,
-            },
-        ];
-        render();
-    };
+    let hideDoneTasks = false;
 
     const removeTask = (index) => {
-        tasks = [...tasks.slice(0, index), ...tasks.slice(index + 1)];
+        tasks = [
+            ...tasks.slice(0, index),
+            ...tasks.slice(index + 1)
+        ];
         render();
     };
 
@@ -26,7 +19,24 @@
             },
             ...tasks.slice(index + 1),
         ];
+        render();
+    };
 
+    const addNewTask = (newTaskContent) => {
+        tasks = [...tasks, { content: newTaskContent }];
+        render();
+    };
+
+    const markAllTasksDone = () => {
+        tasks = tasks.map((task) => ({
+            ...task,
+            done: true,
+        }));
+        render();
+    };
+
+    const toggleHideDoneTasks = () => {
+        hideDoneTasks = !hideDoneTasks;
         render();
     };
 
@@ -48,12 +58,9 @@
         });
     };
 
-    const render = () => {
-        let htmlString = "";
-
-        for (const task of tasks) {
-            htmlString += `
-            <li class = "js-tasks tasks__item"> 
+    const renderTasks = () => {
+        const taskToHtml = task => `
+            <li class="tasks__item${task.done && hideDoneTasks ? " tasks__item--hidden" : ""} js-tasks"> 
               <button class="tasks__button tasks__button--toggleDone js-done">
                ${task.done ? "✔" : ""} </button>
               <span class="tasks${task.done ? " tasks__done" : ""}">
@@ -61,33 +68,62 @@
               <button class="js-remove tasks__button tasks__button--delete">🗑</button>
             </li>
         `;
-        };
-
-        document.querySelector(".js-tasks").innerHTML = htmlString;
-
-        bindRemoveEvents();
-        bindToggleDoneEvents();
+        const tasksElement = document.querySelector(".js-tasks");
+        tasksElement.innerHTML = tasks.map(taskToHtml).join("");
     };
 
-    const clearInput = (inputElement) => {
-        inputElement.value = "";
-        inputElement.focus();
+    const renderButtons = () => {
+        const buttonsElement = document.querySelector(".js-buttons");
+
+        if (!tasks.length) {
+            buttonsElement.innerHTML = "";
+            return;
+        }
+
+        buttonsElement.innerHTML = `
+            <button class="buttons__button js-toggleHideDoneTasks"> 
+             ${hideDoneTasks ? "Pokaż " : "Ukryj "} ukończone
+            </button>
+            <button class="buttons__button js-markAllDone"
+             ${tasks.every(({ done }) => done) ? " disabled" : ""}>Ukończ wszystkie
+            </button>\
+            `;
+    };
+
+    const bindButtonsEvents = () => {
+        const markAllDoneButton = document.querySelector(".js-markAllDone");
+
+        if (markAllDoneButton) {
+            markAllDoneButton.addEventListener("click", markAllTasksDone);
+        }
+
+        const toggleHideDoneTasksButton = document.querySelector(".js-toggleHideDoneTasks");
+
+        if (toggleHideDoneTasksButton) {
+            toggleHideDoneTasksButton.addEventListener("click", toggleHideDoneTasks);
+        }
+    };
+
+    const render = () => {
+        renderTasks();
+        bindRemoveEvents();
+        bindToggleDoneEvents();
+
+        renderButtons();
+        bindButtonsEvents();
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const newTaskContent = document.querySelector(".js-newTask").value.trim();
-        const inputElement = document.querySelector(".js-newTask");
+        const newTaskElement = document.querySelector(".js-newTask");
+        const newTaskContent = newTaskElement.value.trim();
 
-        if (newTaskContent === "") {
-            clearInput(inputElement);
-            return;
+        if (newTaskContent !== "") {
+            addNewTask(newTaskContent);
+            newTaskElement.value = "";
         };
-
-        addNewTask(newTaskContent);
-        clearInput(inputElement);
-
+        newTaskElement.focus();
     };
 
     const init = () => {
@@ -99,4 +135,4 @@
 
     };
     init();
-}
+};
