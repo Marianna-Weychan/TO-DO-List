@@ -8,8 +8,7 @@
 
 ## [](https://github.com/Marianna-Weychan/currency-converter/edit/main/README.md#short-description) ⌨️ Short description
 
-A simple application for creating a to-do list.
-It allows you to save activities that we have to perform, mark if they are done or delete from the list after they are completed.
+A simple to-do list app. It allows you to save the activities that you have to do, select and/or hide all completed activities or completely remove them from the list after completing them.
 
 I created this application as part of learning programming at YouCode school.
 
